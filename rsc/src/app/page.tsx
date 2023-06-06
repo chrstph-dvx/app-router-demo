@@ -4,6 +4,7 @@ import {
   fetchClassicRetryables,
 } from "@/utils/api";
 import { Suspense } from "react";
+import { ClientComponent } from "@/app/ClientComponent";
 
 const Retryables = async () => {
   const retryables = await fetchRetryables();
@@ -35,7 +36,7 @@ const ClassicRetryables = async () => {
   return (
     <ul>
       {retryables.map((retryable) => (
-        <li key={retryable.id}>Retryable id: {retryable.id}</li>
+        <li key={retryable.id}>Classic retryable id: {retryable.id}</li>
       ))}
     </ul>
   );
@@ -58,6 +59,8 @@ export default function Home() {
       <Suspense fallback="Loading classic retryables...">
         <ClassicRetryables />
       </Suspense>
+
+      <ClientComponent />
     </div>
   );
 }
