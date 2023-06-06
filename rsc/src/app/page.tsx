@@ -55,9 +55,9 @@ export default function Home() {
       </Suspense>
 
       <h2 className="mt-4 mb-2 text-3xl">Classic Retryables</h2>
-      {/* <Suspense fallback="Loading classic retryables..."> */}
-      <ClassicRetryables />
-      {/* </Suspense> */}
+      <Suspense fallback="Loading classic retryables...">
+        <ClassicRetryables />
+      </Suspense>
     </div>
   );
 }
